@@ -164,7 +164,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           src={project.video}
           loop
           muted
-          className="w-full h-80 sm:h-96 object-cover rounded-xl transition-all"
+          className="w-full h-120 sm:h-full object-cover rounded-xl transition-all"
         />
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           {isPlaying ? (
