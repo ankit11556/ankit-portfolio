@@ -34,6 +34,36 @@ const projects: ProjectType[] = [
     live: "https://say-my-task.vercel.app/",
     featured: true,
   },
+
+  {
+    name: "Virtual Trading Platform — Real-Time Trading Simulator",
+    description:
+      "Practice trading across Forex, Stocks, Commodities, and Crypto markets with virtual money in real conditions.",
+    impact:
+      "Enables users to learn trading strategies and market behavior safely without financial risk.",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind",
+      "Chart.js",
+      "Binance API",
+    ],
+    features: [
+      "User Authentication with JWT",
+      "Virtual Wallet with automatic balance updates",
+      "Real-time market data & interactive charts",
+      "Buy/Sell execution and order tracking",
+      "Portfolio & analytics dashboard",
+      "Admin panel for monitoring and user management",
+    ],
+    video: "/videos/virtual-trading.mp4",
+    github: "https://github.com/ankit11556/virtual-trading-platform",
+    live: "https://virtual-trading-platform-ruby.vercel.app",
+    featured: true,
+  },
+
   {
     name: "LostFoundr — Lost & Found Platform",
     description:
@@ -82,9 +112,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
       </h3>
 
       {/* IMPACT LINE */}
-      <p className="text-purple-300 font-semibold text-lg">
-        {project.impact}
-      </p>
+      <p className="text-purple-300 font-semibold text-lg">{project.impact}</p>
 
       {/* DESCRIPTION */}
       <p className="text-gray-300 max-w-3xl">{project.description}</p>
@@ -125,9 +153,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
           src={project.video}
           muted
           loop
-          className={`w-full object-cover rounded-xl ${
-            project.featured 
-          }`}
+          className={`w-full object-cover rounded-xl ${project.featured}`}
         />
         <div className="absolute inset-0 flex items-center justify-center">
           {isPlaying ? (
@@ -163,7 +189,7 @@ const ProjectCard = ({ project }: { project: ProjectType }) => {
 
 // MAIN SECTION
 const ProjectsSection = () => {
-  const featured = projects.find((p) => p.featured);
+  const featured = projects.filter((p) => p.featured);
   const others = projects.filter((p) => !p.featured);
 
   return (
@@ -175,12 +201,12 @@ const ProjectsSection = () => {
         My Projects
       </h2>
 
-      {/* FEATURED */}
-      {featured && (
-        <div className="max-w-6xl mx-auto mb-28">
-          <ProjectCard project={featured} />
+      {/* FEATURED PROJECTS */}
+      {featured.map((project, index) => (
+        <div key={index} className="max-w-6xl mx-auto mb-28">
+          <ProjectCard project={project} />
         </div>
-      )}
+      ))}
 
       {/* OTHERS */}
       <div className="max-w-5xl mx-auto flex flex-col gap-20">
