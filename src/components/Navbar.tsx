@@ -14,7 +14,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = ["hero", "about", "projects", "skills", "contact"];
+      const sections = ["hero", "experience", "about", "projects", "skills", "contact"];
 
       sections.forEach((sec) => {
         const el = document.getElementById(sec);
@@ -33,7 +33,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const links = ["about", "projects", "skills", "contact"];
+  const links = ["about", "experience", "projects", "skills", "contact"];
 
   return (
     <motion.nav
