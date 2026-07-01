@@ -43,46 +43,54 @@ export default function About() {
   const titleInView = useInView(titleRef, { once: true });
   const introInView = useInView(introRef, { once: true });
 
-  const title = useScrollTypewriter("About Me", titleInView, 90);
+  const title = useScrollTypewriter("Professional Summary", titleInView, 90);
 
   const intro = useScrollTypewriter(
-    "Hi, I'm Ankit — a passionate MERN Stack Developer who builds modern UI, optimized backend systems, and high-performance web apps.",
+    "Software Engineer with hands-on experience building production-ready web applications through two software engineering internships. Experienced in full-stack development, REST APIs, authentication, performance optimization, and scalable software solutions.",
     introInView,
-    35
+    35,
   );
 
   const strengths = [
     {
-      title: "Quick Learner",
-      desc: "I pick up new technologies fast and adapt instantly.",
+      title: "Production Experience",
+      desc: "Built and contributed to production applications across two software engineering internships.",
       color: "from-blue-500 to-cyan-400",
     },
     {
-      title: "Problem Solver",
-      desc: "I focus on clean logic and efficient solutions.",
+      title: "Full Stack Development",
+      desc: "Developed scalable frontend applications, backend services, REST APIs, and secure authentication systems.",
       color: "from-green-500 to-emerald-400",
     },
     {
-      title: "Clean UI/UX",
-      desc: "I create modern, beautiful and minimal interfaces.",
+      title: "Performance & Scalability",
+      desc: "Optimized application performance, data handling, and built maintainable software for real-world use cases.",
       color: "from-pink-500 to-rose-400",
     },
     {
-      title: "Consistency",
-      desc: "I learn every day with discipline and passion.",
+      title: "Continuous Growth",
+      desc: "Continuously strengthening software engineering fundamentals, backend development, and problem-solving skills.",
       color: "from-yellow-500 to-orange-400",
     },
   ];
 
   const stats = [
-    { num: 500, label: "GitHub Contributions" },
-    { num: 15, label: "Projects Completed" },
-    { num: 3, label: "Major Full-Stack Projects" },
+    {
+      num: 2,
+      label: "Software Engineering Internships",
+    },
+    {
+      num: 3,
+      label: "Production-Level Projects",
+    },
+    {
+      num: 9,
+      label: "Months of Industry Experience",
+    },
   ];
 
   return (
     <section className="min-h-screen w-full px-6 py-24 bg-[#050505] text-white flex flex-col items-center">
-      
       {/* Heading */}
       <motion.h2
         ref={titleRef}
@@ -119,8 +127,10 @@ export default function About() {
             hover:-translate-y-3 transition-all duration-300 relative"
           >
             {/* 3D Shine */}
-            <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-20 transition-all duration-700
-            pointer-events-none" />
+            <div
+              className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-20 transition-all duration-700
+            pointer-events-none"
+            />
 
             {/* Title */}
             <h3

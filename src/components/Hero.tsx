@@ -6,7 +6,7 @@ import Tilt from "react-parallax-tilt";
 import useTypewriter from "@/hooks/useTypewriter";
 
 export default function Hero() {
-  const typeText = useTypewriter("Full-Stack MERN Developer", 80);
+  const typeText = useTypewriter("Software Engineer", 80);
 
   return (
     <section
@@ -40,14 +40,22 @@ export default function Hero() {
             {typeText || ""}
           </h1>
 
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2"
+          >
+            <span className="h-2 w-2 rounded-full bg-green-400"></span>
+            <span className="text-sm font-medium text-blue-300">
+              Software Engineer Intern @ Voyagex AI
+            </span>
+          </motion.div>
+
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            I build modern, scalable, high-performance web applications using
-            <span className="text-blue-400"> React.js</span>,
-            <span className="text-green-400"> Node.js & Express</span>,
-            <span className="text-yellow-400"> MongoDB</span>. I leverage{" "}
-            <span className="text-purple-400">Tailwind CSS</span>, integrate
-            <span className="text-pink-400"> JWT & OAuth</span>, and implement
-            <span className="text-teal-400"> APIs & cloud solutions</span>.
+            Building reliable, scalable, and maintainable software with a focus
+            on clean architecture, performance optimization, and solving
+            real-world engineering challenges.
           </p>
 
           {/* Buttons */}
@@ -64,7 +72,7 @@ export default function Hero() {
               href="#contact"
               className="px-6 py-3 border border-gray-500 hover:border-white rounded-xl text-lg font-semibold transition-transform"
             >
-              Contact Me
+              Get In Touch
             </motion.a>
           </div>
         </motion.div>
